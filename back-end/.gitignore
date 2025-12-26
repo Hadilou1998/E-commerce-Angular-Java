@@ -1,8 +1,13 @@
 HELP.md
+.devcontainer/
 target/
+webpack/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+.gitattributes
+.mvn/
 
 ### STS ###
 .apt_generated
