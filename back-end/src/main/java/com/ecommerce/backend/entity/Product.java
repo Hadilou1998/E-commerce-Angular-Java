@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
 import java.math.BigDecimal;
 
 @Entity
@@ -19,8 +18,10 @@ public class Product {
 
     @Column(length = 30, nullable = false)
     private String name;
-    @Column(length = 30, nullable = false)
+    @Column(columnDefinition = "TEXT")
     private String description;
+    @Column(length = 255)
+    private String image;
     private BigDecimal price;
     private int stock;
 

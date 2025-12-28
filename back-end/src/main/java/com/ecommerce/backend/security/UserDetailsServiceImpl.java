@@ -24,13 +24,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throws UsernameNotFoundException {
 
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() ->
-                        new UsernameNotFoundException("Utilisateur introuvable"));
+            .orElseThrow(() ->
+                new UsernameNotFoundException("Utilisateur introuvable"));
 
         return new org.springframework.security.core.userdetails.User(
-                user.getEmail(),
-                user.getPassword(),
-                List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()))
+            user.getEmail(),
+            user.getPassword(),
+            List.of(new SimpleGrantedAuthority("ROLE_" + user.getRole()))
         );
     }
 }

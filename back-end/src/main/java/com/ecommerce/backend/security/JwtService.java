@@ -23,11 +23,11 @@ public class JwtService {
        ===================== */
     public String generateToken(String email) {
         return Jwts.builder()
-                .setSubject(email)
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
-                .signWith(secretKey, SignatureAlgorithm.HS256)
-                .compact();
+            .setSubject(email)
+            .setIssuedAt(new Date())
+            .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
+            .signWith(secretKey, SignatureAlgorithm.HS256)
+            .compact();
     }
 
     /* =====================
@@ -50,15 +50,15 @@ public class JwtService {
        ===================== */
     private boolean isTokenExpired(String token) {
         return extractAllClaims(token)
-                .getExpiration()
-                .before(new Date());
+            .getExpiration()
+            .before(new Date());
     }
 
     private Claims extractAllClaims(String token) {
         return Jwts.parserBuilder()
-                .setSigningKey(secretKey)
-                .build()
-                .parseClaimsJws(token)
-                .getBody();
+            .setSigningKey(secretKey)
+            .build()
+            .parseClaimsJws(token)
+            .getBody();
     }
 }
