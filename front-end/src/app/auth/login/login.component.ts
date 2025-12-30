@@ -27,8 +27,8 @@ export class LoginComponent {
       email: this.email, 
       password: this.password 
     }).subscribe({
-      next: (token) => {
-        this.auth.saveToken(token);
+      next: (res) => {
+        this.auth.saveAuth(res.token, res.role);
         this.router.navigate(['/products']);
       },
       error: () => {

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { ProductService } from '../../core/services/product.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-product-list',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
@@ -13,9 +16,18 @@ export class ProductListComponent implements OnInit {
 
   products: any[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private auth: AuthService
+  ) {}
 
   ngOnInit() {
-    this.productService.getAll().subscribe(data => this.products = data);
+    this.productService.getAll().subscribe({
+      next: data => this.products = data
+    });
+  }
+
+  addToCart(productId: number) {
+    console.log('Ajout au panier', productId);
   }
 }

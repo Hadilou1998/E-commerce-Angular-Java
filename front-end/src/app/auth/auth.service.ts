@@ -17,27 +17,40 @@ export class AuthService {
 
     constructor(private http: HttpClient) {}
 
-    login(data: LoginRequest): Observable<string> {
-        return this.http.post(
+    login(data: LoginRequest): Observable<{ token: string, role: string }> {
+        return this.http.post<{ token: string, role: string }>(
             `${this.apiUrl}/login`, 
-            data,
-            { responseType: 'text' }
+            data
         );
     }
 
-    saveToken(token: string): void {
+    saveAuth(token: string, role: string): void {
         localStorage.setItem('token', token);
+        localStorage.setItem('role', role);
+    }
+
+    getRole(): string | null {
+        return localStorage.getItem('role');
     }
 
     getToken(): string | null {
         return localStorage.getItem('token');
     }
 
-    logout(): void {
-        localStorage.removeItem('token');
+    isAdmin(): boolean {
+        return this.getRole() === 'ADMIN';
+    }
+
+    isUser(): boolean {
+        return this.getRole() === 'USER';
     }
 
     isLoggedIn(): boolean {
         return !!this.getToken();
+    }
+
+    logout(): void {
+        localStorage.removeItem('token');
+        localStorage.removeItem('role');
     }
 }
