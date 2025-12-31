@@ -18,7 +18,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private auth: AuthService
+    public auth: AuthService
   ) {}
 
   ngOnInit() {
