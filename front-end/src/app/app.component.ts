@@ -1,24 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthService } from './auth/auth.service';
+import { CommonModule } from '@angular/common';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'front-end';
-  /*constructor(private auth: AuthService) {}
+  constructor(public auth: AuthService) {}
 
-  ngOnInit(): void {
-    this.auth.login({
-      email: 'admintest@example.com',
-      password: 'admin123'
-    }).subscribe(token => {
-      console.log('JWT:', token);
-      this.auth.saveToken(token);
-    });
-  }*/
+  logout() {
+    this.auth.logout();
+  }
 }

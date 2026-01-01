@@ -29,7 +29,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  addToCart() {
-    console.log('Ajout panier', this.product.id);
+  addToCart(product: any): void {
+    console.log('Ajout panier', product);
   }
 }

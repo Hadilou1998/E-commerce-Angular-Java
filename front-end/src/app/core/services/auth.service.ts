@@ -1,5 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+export interface LoginRequest {
+    email: string;
+    password: string;
+}
+
+export interface LoginResponse {
+    token: string;
+    role: 'USER' | 'ADMIN';
+}
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -8,23 +19,49 @@ export class AuthService {
 
     constructor(private http: HttpClient) {}
 
-    login(data: any) {
-        return this.http.post<string>(`${this.API}/login`, data);
+    login(data: LoginRequest): Observable<LoginResponse> {
+        return this.http.post<LoginResponse>(
+            `${this.API}/login`, 
+            data
+        );
     }
 
-    register(data: any) {
-        return this.http.post(`${this.API}/register`, data);
+    register(data: any): Observable<any> {
+        return this.http.post(
+            `${this.API}/register`, 
+            data
+        );
     }
 
-    saveToken(token: string) {
+    saveAuth(token: string, role: string): void {
         localStorage.setItem('token', token);
+        localStorage.setItem('role', role);
+    }
+    getToken(): string | null {
+        return localStorage.getItem('token');
+    }
+
+    getRole(): string | null {
+        return localStorage.getItem('role');
+    }
+
+    isLoggedIn(): boolean {
+        return!!this.getToken();
+    }
+
+    isAuthenticated(): boolean {
+        return this.isLoggedIn();
+    }
+
+    isUser(): boolean {
+        return this.getRole() === 'USER';
+    }
+
+    isAdmin(): boolean {
+        return this.getRole() === 'ADMIN';
     }
 
     logout() {
         localStorage.removeItem('token');
-    }
-
-    isAuthenticated(): boolean {
-        return !!localStorage.getItem('token');
     }
 }
