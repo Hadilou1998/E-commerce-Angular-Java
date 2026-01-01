@@ -28,15 +28,23 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody User request) {
+    public Map<String, String> login(@RequestBody User request) {
+
+        authManager.authenticate(
+            new UsernamePasswordAuthenticationToken(
+                request.getEmail(),
+                request.getPassword()
+            )
+        );
 
         User user = userRepo.findByEmail(request.getEmail())
-                .orElseThrow(() -> new RuntimeException("User not found"));
-
-        if (!passEncoder.matches(request.getPassword(), user.getPassword())) {
-            throw new RuntimeException("Invalid password");
-        }
+                .orElseThrow();
         
-        return jwtService.generateToken(user.getEmail());
+        String token =jwtService.generateToken(user.getEmail());
+
+        return Map.of(
+            "token", token
+            "role", user.getRole().name()
+        );
     }
 }
