@@ -1,17 +1,24 @@
-<div class="login-container">
-    <h2>Se connecter</h2>
-    <form (ngSubmit)="login()">
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" [(ngModel)]="email" required>
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow login-container">
+
+        <h4 class="text-center mb-3">Se connecter</h4>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="email" placeholder="Enter your email" />
         </div>
-        <div class="form-group">
-            <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password" [(ngModel)]="password" required>
+
+        <div class="mb-3">
+            <label>Mot de passe</label>
+            <input type="password" class="form-control" [(ngModel)]="password" placeholder="Enter your password" />
         </div>
-        <div class="form-group">
-            <button type="submit">Se connecter</button>
+
+        <button class="btn btn-secondary w-100" (click)="login()">
+            Se connecter
+        </button>
+
+        <div class="login-error" *ngIf="error">
+            {{ error }}
         </div>
-    </form>
-    <div *ngIf="error" class="error">{{ error }}</div>
+    </div>
 </div>

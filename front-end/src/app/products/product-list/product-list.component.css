@@ -1,4 +1,6 @@
 .product-image {
     height: 220px;
-    object-fit: cover;
+    object-fit: contain;
+    padding: 10px;
+    background-color: #f9f9f9;
 }
