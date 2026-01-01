@@ -43,7 +43,7 @@ public class AuthController {
         String token =jwtService.generateToken(user.getEmail());
 
         return Map.of(
-            "token", token
+            "token", token,
             "role", user.getRole().name()
         );
     }
