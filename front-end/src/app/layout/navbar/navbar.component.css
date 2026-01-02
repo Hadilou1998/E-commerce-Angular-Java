@@ -1,0 +1,77 @@
+/* Navbar container */
+.navbar {
+    background-color: #bfe6ea; /* bleu clair comme tes screenshots */
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Container */
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Brand */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Nav links list */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Individual nav item */
+.nav-item {
+    list-style: none;
+}
+
+/* Links */
+.nav-link {
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Logout button */
+button.btn {
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Outline button style */
+.btn-outline-primary {
+    background-color: transparent;
+    border: 1px solid #0d6efd;
+    color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
