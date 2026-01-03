@@ -10,7 +10,7 @@ export class CartService {
     constructor(private http: HttpClient) {}
 
     getCart(): Observable<any> {
-        return this.http.get(this.API);
+        return this.http.get<any[]>(this.API);
     }
 
     addToCart(productId: number, quantity: number = 1): Observable<any> {
@@ -28,5 +28,11 @@ export class CartService {
 
     removeItem(itemId: number): Observable<any> {
         return this.http.delete(`${this.API}/items/${itemId}`);
+    }
+
+    getTotal(cart: any[]): number {
+        return cart.reduce(
+            (total, item) => total + item.product.price * item.quantity, 0
+        );
     }
 }

@@ -1,0 +1,11 @@
+.product-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.quantity-input {
+    width: 80px;
+}

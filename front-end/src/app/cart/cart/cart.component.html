@@ -1,1 +1,64 @@
-<p>cart works!</p>
+<div class="container mt-4">
+
+    <h2 class="mb-4">My Cart</h2>
+
+    <table class="table table-bordered" *ngIf="cart.length > 0">
+        <thead class="table-light">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th *ngIf="auth.isUser() || auth.isAdmin()">Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of cart">
+                <td class="d-flex align-items-center gap-3">
+                    <img
+                        [src]="item.image"
+                        alt="{{ item.name }}"
+                        class="product-img"
+                    />
+                    {{ item.name }}
+                </td>
+
+                <td>{{ item.price }} €</td>
+
+                <td>
+                    <input
+                        type="number"
+                        min="1"
+                        class="form-control quantity-input"
+                        [value]="item.quantity"
+                        (change)="updateQuantity(item, $event)"
+                        [disabled]="!auth.isUser() && !auth.isAdmin()"
+                        aria-label="Quantity of product {{ item.name }}"
+                    />
+                </td>
+
+                <td>{{ item.price * item.quantity }} €</td>
+
+                <td *ngIf="auth.isUser() || auth.isAdmin()">
+                    <button
+                        class="btn btn-danger btn-sm"
+                        (click)="remove(item)">
+                        Remove
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div *ngIf="cart.length === 0" class="alert alert-info">
+        Your cart is empty.
+    </div>
+
+    <div class="text-end mt-4" *ngIf="cart.length > 0">
+        <h4>Total : <strong>{{ total() }} €</strong></h4>
+        <button class="btn btn-success mt-2" *ngIf="auth.isUser()">
+            Valider la commande
+        </button>
+    </div>
+</div>
