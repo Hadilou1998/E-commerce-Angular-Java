@@ -76,20 +76,83 @@ public class DataInitializer implements CommandLineRunner {
                 new Product(
                     null,
                     "New Balance 530",
-                    "New Balance 530 Homme Chaussures de loisirs 9.5 Orange.",
-                    "https://www.idealo.fr/prix/200603576/new-balance-530.html",
-                    new BigDecimal(64.79),
+                    "New Balance 530 white natural indigo.",
+                    "src/app/assets/new-balance-530-white-natural-indigo.jpg",
+                    new BigDecimal(81.25),
                     27,
                     springMen
                 ),
                 new Product(
                     null,
                     "Adidas Samba OG",
-                    "adidas Samba Og Femme Black Silver Baskets - 36 2/3 EU.",
-                    "https://www.idealo.fr/prix/5824995/adidas-samba-og.html",
-                    new BigDecimal(53.45),
+                    "adidas Samba Og core black cloud white gum.",
+                    "src/app/assets/adidas-samba-og-b75807-core-black-cloud-white-gum5.jpg",
+                    new BigDecimal(71.99),
                     54,                
                     springWomen
+                ),
+                new Product(
+                    null,
+                    "Nike Shox TL",
+                    "Nike Shox TL type white.",
+                    "src/app/assets/nike-shox-tl.jpg",
+                    new BigDecimal(51.00),
+                    30,                
+                    springMen
+                ),
+                new Product(
+                    null,
+                    "Adidas SL 72 OG",
+                    "adidas sl 72 og women scarlet cream white gum.",
+                    "src/app/assets/adidas-sl-72-og-women-scarlet-cream-white-gum.jpg",
+                    new BigDecimal(64.90),
+                    30,                
+                    springWomen
+                ),
+                new Product(
+                    null,
+                    "Nike Air Max LTD",
+                    "nike air max ltd 3 black white cool grey.",
+                    "src/app/assets/nike-air-max-ltd-3-black-white-cool-grey.jpg",
+                    new BigDecimal(55.00),
+                    30,                
+                    springMen
+                ),
+                new Product(
+                    null,
+                    "Chaussures printemps maille",
+                    "Chaussures-printemps-maille-respirante-decontractée.",
+                    "src/app/assets/Chaussures-printemps-maille-respirante-decontractée.jpg",
+                    new BigDecimal(129.99),
+                    30,                
+                    springWomen
+                ),
+                new Product(
+                    null,
+                    "Adidas Ultraboost",
+                    "Adidas Ultraboost 2.0 blue black white.",
+                    "src/app/assets/adidas-ultraboost-2-0-blue-black-white.jpg",
+                    new BigDecimal(199.99),
+                    30,                
+                    springMen
+                ),
+                new Product(
+                    null,
+                    "Nike Air Zoom Pegasus 36",
+                    "Nike Air Zoom Pegasus 36 black white.",
+                    "src/app/assets/nike-air-zoom-pegasus-36-black-white.jpg",
+                    new BigDecimal(299.99),
+                    30,                
+                    springWomen
+                ),
+                new Product(
+                    null,
+                    "Adidas Ultraboost",
+                    "Adidas Ultraboost 2.0 blue black white.",
+                    "src/app/assets/adidas-ultraboost-2-0-blue-black-white.jpg",
+                    new BigDecimal(199.99),
+                    30,                
+                    springMen
                 )
             ));
         }
