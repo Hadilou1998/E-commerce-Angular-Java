@@ -32,9 +32,9 @@
                         min="1"
                         class="form-control quantity-input"
                         [value]="item.quantity"
-                        (change)="updateQuantity(item, $event)"
+                        (change)="updateItem(item, $event)"
                         [disabled]="!auth.isUser() && !auth.isAdmin()"
-                        aria-label="Quantity of product {{ item.name }}"
+                        aria-label="Quantity of product"
                     />
                 </td>
 
@@ -43,7 +43,7 @@
                 <td *ngIf="auth.isUser() || auth.isAdmin()">
                     <button
                         class="btn btn-danger btn-sm"
-                        (click)="remove(item)">
+                        (click)="removeItem(item)">
                         Remove
                     </button>
                 </td>
@@ -58,7 +58,7 @@
     <div class="text-end mt-4" *ngIf="cart.length > 0">
         <h4>Total : <strong>{{ total() }} €</strong></h4>
         <button class="btn btn-success mt-2" *ngIf="auth.isUser()">
-            Valider la commande
+            Check the command
         </button>
     </div>
 </div>
