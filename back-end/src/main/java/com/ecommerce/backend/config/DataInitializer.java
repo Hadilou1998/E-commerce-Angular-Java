@@ -120,37 +120,37 @@ public class DataInitializer implements CommandLineRunner {
                 ),
                 new Product(
                     null,
-                    "Chaussures printemps maille",
-                    "Chaussures-printemps-maille-respirante-decontractée.",
-                    "src/app/assets/Chaussures-printemps-maille-respirante-decontractée.jpg",
-                    new BigDecimal(129.99),
+                    "Skechers Graceful",
+                    "skechers graceful get connected black gold.",
+                    "src/app/assets/skechers-graceful-get-connected-black-gold.jpg",
+                    new BigDecimal(33.36),
                     30,                
                     springWomen
                 ),
                 new Product(
                     null,
-                    "Adidas Ultraboost",
-                    "Adidas Ultraboost 2.0 blue black white.",
-                    "src/app/assets/adidas-ultraboost-2-0-blue-black-white.jpg",
-                    new BigDecimal(199.99),
+                    "Nike Air Force 1 07",
+                    "nike air force 1 07 dark obsidian black.",
+                    "src/app/assets/nike-air-force-1-07-dark-obsidian-black-smoke-grey-dark-obsidian.jpg",
+                    new BigDecimal(83.30),
                     30,                
                     springMen
                 ),
                 new Product(
                     null,
-                    "Nike Air Zoom Pegasus 36",
-                    "Nike Air Zoom Pegasus 36 black white.",
-                    "src/app/assets/nike-air-zoom-pegasus-36-black-white.jpg",
-                    new BigDecimal(299.99),
+                    "Asics GEL NYC",
+                    "asics gel nyc 1201a789 graphite grey black.",
+                    "src/app/assets/asics-gel-nyc-1201a789-graphite-grey-black.jpg",
+                    new BigDecimal(150.00),
                     30,                
                     springWomen
                 ),
                 new Product(
                     null,
-                    "Adidas Ultraboost",
-                    "Adidas Ultraboost 2.0 blue black white.",
-                    "src/app/assets/adidas-ultraboost-2-0-blue-black-white.jpg",
-                    new BigDecimal(199.99),
+                    "Puma Club II Era",
+                    "puma club ii era cool dark gray vapor gray gum.",
+                    "src/app/assets/puma-club-ii-era-cool-dark-gray-vapor-gray-gum.jpg",
+                    new BigDecimal(38.99),
                     30,                
                     springMen
                 )
