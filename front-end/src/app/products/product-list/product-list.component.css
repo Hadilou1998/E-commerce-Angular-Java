@@ -1,6 +1,42 @@
+.product-card {
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s ease;
+    background: #fff;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
 .product-image {
     height: 220px;
     object-fit: contain;
-    padding: 10px;
+    padding: 15px;
     background-color: #f9f9f9;
+}
+
+.card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    min-height: 45px;
+}
+
+.card-text {
+    font-size: 0.8rem;
+    min-height: 45px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    padding: 4px 10px;
+    font-size: 0.8rem;
+}
+
+.btn-link {
+    font-size: 0.75rem;
 }
